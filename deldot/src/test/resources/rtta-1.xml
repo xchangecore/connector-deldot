@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <rtta>
+    <id>32883</id>
+    <type>Construction</type>
+    <county>New Castle County</county>
+    <details>KIAMENSI RD BETWEEN MEADOWBROOK AVE. AND CLYDE STREET. PLEASE FOLLOW ON SCENE DETOURS. EXPECT DELAYS.</details>
+    <latitude>39.72330629</latitude>
+    <longitude>-75.62599897</longitude>
+    <timestamp>2011-02-22 17:40:38.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33547</id>
+    <type>Construction</type>
+    <county>Kent County</county>
+    <details>MT OLIVE CEMETERY RD BTWN SANDTOWN RD AND RT 10 WILL BE CLOSED UNTIL THE FIRST WEEK IN MAY. PLEASE USE AN ALTERNATE ROUTE. DELAYS CAN BE EXPECTED.</details>
+    <latitude>39.03180601</latitude>
+    <longitude>-75.69580078</longitude>
+    <timestamp>2011-03-28 20:06:46.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33519</id>
+    <type>Construction</type>
+    <county>Kent County</county>
+    <details>DOVER AIR FORCE BASE SOUTH GATE IS CLOSED DUE TO CONSTRUCTION. USE NORTH GATE. </details>
+    <latitude>39.12159073</latitude>
+    <longitude>-75.47950745</longitude>
+    <timestamp>2011-03-28 06:54:32.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33786</id>
+    <type>Construction</type>
+    <county>New Castle County</county>
+    <details>I-95 SB FROM TOLL PLAZA TO OTTS CHAPEL, LEFT LANE CLOSED TILL 5:00 PM. USE CAUTION. </details>
+    <latitude>39.64292159</latitude>
+    <longitude>-75.77270508</longitude>
+    <timestamp>2011-04-09 13:46:50.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33657</id>
+    <type>Construction</type>
+    <county>New Castle County</county>
+    <details>GOVERNOR   PRINTZ  BLVD BETWEEN EAST HOLLY OAK RD AND CAUFFIEL PKWY SOUTHBOUND LANE CLOSED  ALL TRAFFIC SHIFT TO NORTHBOUND LANE UNTIL JUNE 2011. PLEASE USE CAUTION. EXPECT SOME DELAYS.</details>
+    <latitude>39.77925506</latitude>
+    <longitude>-75.47783375</longitude>
+    <timestamp>2011-04-04 07:57:07.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33633</id>
+    <type>Construction</type>
+    <county>New Castle County</county>
+    <details>HERCULES RD WB BETWEEN RT 48 AND CHESHIRE CT RIGHT LANE CLOSED UNTIL APRIL 22ND FOR PIPE WORK. EXPECT DELAYS. </details>
+    <latitude>39.75998481</latitude>
+    <longitude>-75.64158797</longitude>
+    <timestamp>2011-04-02 07:43:48.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33781</id>
+    <type>Construction</type>
+    <county>New Castle County</county>
+    <details>FOULK RD BETW SILVERSIDE RD &amp; NAAMANS RD., NORTHBOUND RIGHT LANE CLOSED UNTIL 4:00 PM. OBEY LANE RESTRICTIONS. </details>
+    <latitude>39.81595982</latitude>
+    <longitude>-75.50834656</longitude>
+    <timestamp>2011-04-09 08:45:56.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33782</id>
+    <type>Construction</type>
+    <county>Sussex County</county>
+    <details>OAK ORCHARD BETWEEN CHIEFS RD AND CAPTAINS WAY INTERMITTENT CLOSURES CONSTRUCTION MONDAY THRU SATURDAY FROM 6AM TO 9PM  UNTIL FURTHER NOTICE. USE CAUTION IN WORK ZONE WORK. THE CONSTRUCTION WILL BE DONE WEATHER PERMITTING.</details>
+    <latitude>38.60457012</latitude>
+    <longitude>-75.18742561</longitude>
+    <timestamp>2011-04-09 09:14:35.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33784</id>
+    <type>Congestion</type>
+    <county>New Castle County</county>
+    <details>95 N/B AT THE DELAWARE TOLLS<br>
+
+MINOR DELAYS AT THIS TIME. DELAYS.</br>
+    </details>
+    <latitude>39.66279941</latitude>
+    <longitude>-75.73425293</longitude>
+    <timestamp>2011-04-09 12:14:21.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33724</id>
+    <type>Emergency Road Closure</type>
+    <county>New Jersey</county>
+    <details>I-295 NB WILL BE CLOSED AT EXIT 23 FROM 10PM FRIDAY NIGHT ON APRIL 8TH TILL SATURDAY MORNING AT 10AM ON THE 9TH FOR ROAD REPAIR. USE  NEW JERSEY TURNPIKE AS ALTERNATE ROUTE TO AVOID DELAYS. </details>
+    <latitude>39.69154871</latitude>
+    <longitude>-75.46783447</longitude>
+    <timestamp>2011-04-06 08:39:21.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>33763</id>
+    <type>Road Closure</type>
+    <county>New Castle County</county>
+    <details>CITY OF WILMINGTON, JEFFERSON ST BETW 6TH &amp; 7TH ST FROM APRIL 11TH TO APRIL 21ST. FOLLOW POSTED DETOUR. </details>
+    <latitude>39.74437366</latitude>
+    <longitude>-75.55513501</longitude>
+    <timestamp>2011-04-07 09:36:04.0</timestamp>
+  </rtta>
+</data>

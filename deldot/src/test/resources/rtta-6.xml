@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <rtta>
+    <id>33519</id>
+    <type>Construction</type>
+    <county>County 3</county>
+    <details>DOVER AIR FORCE BASE SOUTH GATE IS CLOSED DUE TO CONSTRUCTION. USE NORTH GATE. </details>
+    <latitude></latitude>
+    <longitude></longitude>
+    <timestamp>2011-03-28 06:54:32.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>42883</id>
+    <type>Construction</type>
+    <county>County 4</county>
+    <details>KIAMENSI RD BETWEEN MEADOWBROOK AVE. AND CLYDE STREET. PLEASE FOLLOW ON SCENE DETOURS. EXPECT DELAYS.</details>
+    <timestamp>2011-02-22 17:40:38.0</timestamp>
+  </rtta>
+  <rtta>
+    <id>52883</id>
+    <type>Construction</type>
+    <county>County 5</county>
+    <details>KIAMENSI RD BETWEEN MEADOWBROOK AVE. AND CLYDE STREET. PLEASE FOLLOW ON SCENE DETOURS. EXPECT DELAYS.</details>
+    <latitude>0.0</latitude>
+    <longitude>0.0</longitude>
+    <timestamp>2011-02-22 17:40:38.0</timestamp>
+  </rtta>
+</data>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:int="http://www.springframework.org/schema/integration"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd">
+     
+     <!-- Polling frequency should not be more than every 5 minutes for the RTTA data feed -->
+    <bean id="scheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+      <property name="period" value="300000"/>
+      <property name="timerTask" ref="httpTimerTask"/>
+    </bean>
+    
+    <bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean">
+      <property name="scheduledTimerTasks">
+        <list>
+          <ref bean="scheduledTask"/>
+        </list>
+      </property>
+    </bean>
+                
+    <bean id="httpTimerTask" class="com.saic.uicds.clients.em.deldotAdapter.HTTPTimerTask">
+        <property name="restTemplate" ref="restTemplate"/>
+        <property name="outputChannel" ref="inboundRTTADataChannel"/>
+        <property name="url" value="http://www.deldot.gov/traffic/data.ejs?type=rtta"/>
+    </bean>
+     
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+    </bean>
+
+    <int:channel id="inboundRTTADataChannel"/>
+    
+    <int:transformer input-channel="inboundRTTADataChannel" output-channel="inboundIncidentContentEnricher" ref="rttaToCollectionTransformer"/>
+
+    <bean id="rttaToCollectionTransformer" class="com.saic.uicds.clients.em.deldotAdapter.RttaToCollectionTransformer"/>
+    
+    <int:channel id="inboundIncidentContentEnricher"/>
+    
+    <int:transformer input-channel="inboundIncidentContentEnricher" output-channel="inboundItemSplitterChannel" ref="incidentContentEnricher"/>
+    
+    <bean id="incidentContentEnricher" class="com.saic.uicds.clients.em.deldotAdapter.IncidentContentEnricher">
+        <property name="uicdsCore" ref="uicdsCore"/>
+    </bean>
+    
+    <int:channel id="inboundItemSplitterChannel"/>
+
+    <int:splitter input-channel="inboundItemSplitterChannel" output-channel="inboundCreateWorkProductChannel"/>
+    
+    <int:channel id="inboundCreateWorkProductChannel"/>
+    
+    <int:transformer input-channel="inboundCreateWorkProductChannel" output-channel="inboundIncidentManagementChannel" ref="workProductContentEnricher"/>
+    
+    <bean id="workProductContentEnricher" class="com.saic.uicds.clients.em.deldotAdapter.WorkProductContentEnricher"/>
+    
+    <int:channel id="inboundIncidentManagementChannel"/>
+    
+    <int:service-activator input-channel="inboundIncidentManagementChannel" ref="incidentManagementServiceAdapter"/>
+    
+    <bean id="incidentManagementServiceAdapter" class="com.saic.uicds.clients.em.deldotAdapter.IncidentManagementServiceAdapter">
+        <property name="uicdsCore" ref="uicdsCore"/>
+    </bean>
+    
+    <bean id="uicdsCore" class="com.saic.uicds.clients.em.async.UicdsCoreImpl">
+         <property name="webServiceClient" ref="springWebServiceClient"/> 
+    </bean>
+    
+    <bean id="springWebServiceClient" class="com.saic.uicds.clients.util.SpringClient">
+         <property name="webServiceTemplate" ref="webServiceTemplate"/> 
+    </bean>
+
+    <bean id="xmlbeansMarshaller" class="org.springframework.oxm.xmlbeans.XmlBeansMarshaller" />
+    <bean class="org.springframework.ws.server.endpoint.adapter.GenericMarshallingMethodEndpointAdapter">
+        <property name="marshaller" ref="xmlbeansMarshaller" />
+        <property name="unmarshaller" ref="xmlbeansMarshaller" />
+    </bean>
+
+    <bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory" />
+    <!-- WebServiceTemplate for the UICDS Core -->
+   <bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
+        <constructor-arg ref="messageFactory" />
+        <property name="marshaller" ref="xmlbeansMarshaller" />
+        <property name="unmarshaller" ref="xmlbeansMarshaller" />
+    <property name="defaultUri" value="http://localhost/uicds/core/ws/services"/>  
+        <property name="messageSender">
+            <bean class="org.springframework.ws.transport.http.CommonsHttpMessageSender">
+                <property name="credentials">
+                    <bean class="org.apache.commons.httpclient.UsernamePasswordCredentials">
+                        <constructor-arg value="user1" />
+                        <constructor-arg value="user1" />
+                    </bean>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    
+
+</beans>  
+
+
